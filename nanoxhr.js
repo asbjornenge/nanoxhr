@@ -29,26 +29,26 @@ function serialize(data) {
     return data
 }
 
-var xhr = function(req) {
+var nxhr = function(req) {
 
     if (typeof req === 'string') { req = createRequest(req) }
 
     return {
         method : function(method) {
             req.nano.method = method;
-            return xhr(req)
+            return nxhr(req)
         },
         set : function(header, value) {
             req.nano.headers[header] = value;
-            return xhr(req)
+            return nxhr(req)
         },
         query : function(query) {
             req.nano.url += '?'+serialize(query)
-            return xhr(req)
+            return nxhr(req)
         },
         data : function(data) {
             req.nano.data = data;
-            return xhr(req)
+            return nxhr(req)
         },
         call : function(callback) {
             req.onload  = function() {if (req.readyState === 4) callback(req)}
@@ -61,5 +61,5 @@ var xhr = function(req) {
     }
 }
 
-module.exports = xhr;
+module.exports = nxhr;
 

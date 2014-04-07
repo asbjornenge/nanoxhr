@@ -3,7 +3,10 @@
   "version": "0.0.1",
   "description": "Nanoxhr is a small xhr (ajax) library.",
   "keywords": [
-    "browser", "browserify", "xhr", "ajax"
+    "browser",
+    "browserify",
+    "xhr",
+    "ajax"
   ],
   "homepage": "https://github.com/asbjornenge/nanoxhr",
   "bugs": "https://github.com/asbjornenge/nanoxhr/issues",
@@ -16,7 +19,7 @@
     "email": "asbjorn@hanafjedle.net",
     "url": "https://github.com/asbjornenge"
   },
-  "main" : "nanoxhr.js",
+  "main": "nanoxhr.js",
   "testling": {
     "harness": "mocha-bdd",
     "files": "test/spec.js",
@@ -38,12 +41,13 @@
   "dependencies": {},
   "devDependencies": {
     "gulp": "~3.6.0",
-    "mocha": "~1.18.2",
     "gulp-browserify": "~0.5.0",
-    "gulp-uglify": "~0.2.1",
+    "gulp-gzip": "0.0.5",
     "gulp-rename": "~1.2.0",
     "gulp-size": "~0.2.0",
+    "gulp-uglify": "~0.2.1",
     "jsdom": "~0.10.5",
-    "gulp-gzip": "0.0.5"
+    "mocha": "~1.18.2",
+    "sinon": "^1.9.1"
   }
 }
