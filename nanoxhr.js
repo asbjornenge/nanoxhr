@@ -9,12 +9,6 @@ function createRequest(url) {
     }
     // local, CORS (other browsers)
     req = new XMLHttpRequest();
-    req.nano = {
-        url     : url,
-        data    : null,
-        method  : 'GET',
-        headers : {}
-    }
     return req;
 }
 
@@ -29,37 +23,40 @@ function serialize(data) {
     return data
 }
 
-var nxhr = function(req) {
-
-    if (typeof req === 'string') { req = createRequest(req) }
-
-    return {
-        method : function(method) {
-            req.nano.method = method;
-            return nxhr(req)
-        },
-        set : function(header, value) {
-            req.nano.headers[header] = value;
-            return nxhr(req)
-        },
-        query : function(query) {
-            req.nano.url += '?'+serialize(query)
-            return nxhr(req)
-        },
-        data : function(data) {
-            req.nano.data = data;
-            return nxhr(req)
-        },
-        call : function(callback) {
-            req.onload  = function() {if (req.readyState === 4) callback(req)}
-            req.onerror = function() {callback(req)};
-            // req.onreadystatechange = function () { console.log(req.readyState); if (req.readyState === 4) callback(req) }
-            req.open(req.nano.method, req.nano.url, false);
-            for (var header in req.nano.headers) { req.setRequestHeader(header, req.nano.headers[header]); }
-            req.send(serialize(req.nano.data))
-        }
-    }
+var nxhr = function(req, url) {
+    this.req      = req
+    this.url      = url
+    this._data    = null
+    this._method  = 'GET'
+    this._headers = {}
+}
+nxhr.prototype.method = function(method) {
+    this._method = method
+    return this
+}
+nxhr.prototype.set = function(header, value) {
+    this._headers[header] = value
+    return this
+}
+nxhr.prototype.query = function(query) {
+    this.url += '?'+serialize(query)
+    return this
+}
+nxhr.prototype.data = function(data) {
+    this._data = data
+    return this
+}
+nxhr.prototype.call = function(callback) {
+    this.req.onload  = function() { if (this.req.readyState === 4) callback(this.req) }.bind(this)
+    this.req.onerror = function() { callback(this.req) }.bind(this)
+    // req.onreadystatechange = function () { console.log(req.readyState); if (req.readyState === 4) callback(req) }
+    this.req.open(this._method, this.url, false)
+    for (var header in this._headers) { this.req.setRequestHeader(header, this._headers[header]); }
+    this.req.send(serialize(this._data))
+    return this
 }
 
-module.exports = nxhr;
+module.exports = function(url) {
+    return new nxhr(createRequest(url), url)
+};
 
