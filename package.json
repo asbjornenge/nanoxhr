@@ -1,22 +1,22 @@
 {
-  "name": "nanodom",
-  "version": "0.0.3",
-  "description": "Nanodom is a small DOM manipulation library.",
+  "name": "nanoxhr",
+  "version": "0.0.1",
+  "description": "Nanoxhr is a small ajax library.",
   "keywords": [
-    "dom", "browser", "browserify"
+    "browser", "browserify", "xhr", "ajax"
   ],
-  "homepage": "https://github.com/asbjornenge/nanodom",
-  "bugs": "https://github.com/asbjornenge/nanodom/issues",
+  "homepage": "https://github.com/asbjornenge/nanoxhr",
+  "bugs": "https://github.com/asbjornenge/nanoxhr/issues",
   "repository": {
     "type": "git",
-    "url": "https://github.com/asbjornenge/nanodom.git"
+    "url": "https://github.com/asbjornenge/nanoxhr.git"
   },
   "author": {
     "name": "asbjornenge",
     "email": "asbjorn@hanafjedle.net",
     "url": "https://github.com/asbjornenge"
   },
-  "main" : "nanodom.js",
+  "main" : "nanoxhr.js",
   "testling": {
     "harness": "mocha-bdd",
     "files": "test/spec.js",
