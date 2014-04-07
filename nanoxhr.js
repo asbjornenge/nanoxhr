@@ -1,13 +1,13 @@
 function createRequest(url) {
     var req;
-    if (typeof 'XMLHttpRequest' === 'undefined' && typeof 'ActiveXObject' !== 'undefined') {
-        req = new ActiveXObject('Microsoft.XMLHTTP');
-    }
-    // CORS (IE8-9)
-    if (url.indexOf('http') === 0 && typeof XDomainRequest !== 'undefined') {
-        req = new XDomainRequest();
-    }
-    // local, CORS (other browsers)
+    // if (typeof 'XMLHttpRequest' === 'undefined' && typeof 'ActiveXObject' !== 'undefined') {
+    //     req = new ActiveXObject('Microsoft.XMLHTTP');
+    // }
+    // // CORS (IE8-9)
+    // if (url.indexOf('http') === 0 && typeof XDomainRequest !== 'undefined') {
+    //     req = new XDomainRequest();
+    // }
+    // // local, CORS (other browsers)
     req = new XMLHttpRequest();
     return req;
 }
