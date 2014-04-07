@@ -1,7 +1,7 @@
 {
   "name": "nanoxhr",
   "version": "0.0.1",
-  "description": "Nanoxhr is a small ajax library.",
+  "description": "Nanoxhr is a small xhr (ajax) library.",
   "keywords": [
     "browser", "browserify", "xhr", "ajax"
   ],
