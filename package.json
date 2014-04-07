@@ -1,0 +1,49 @@
+{
+  "name": "nanodom",
+  "version": "0.0.3",
+  "description": "Nanodom is a small DOM manipulation library.",
+  "keywords": [
+    "dom", "browser", "browserify"
+  ],
+  "homepage": "https://github.com/asbjornenge/nanodom",
+  "bugs": "https://github.com/asbjornenge/nanodom/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/asbjornenge/nanodom.git"
+  },
+  "author": {
+    "name": "asbjornenge",
+    "email": "asbjorn@hanafjedle.net",
+    "url": "https://github.com/asbjornenge"
+  },
+  "main" : "nanodom.js",
+  "testling": {
+    "harness": "mocha-bdd",
+    "files": "test/spec.js",
+    "browsers": [
+      "ie/9..latest",
+      "chrome/23..latest",
+      "firefox/22..latest",
+      "safari/latest",
+      "opera/12..latest",
+      "iphone/6",
+      "ipad/6",
+      "android-browser/latest"
+    ]
+  },
+  "scripts": {
+    "test": "mocha --ui bdd",
+    "localtest": "mocha -R nyan --check-leaks -w test/localtest"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "~3.6.0",
+    "mocha": "~1.18.2",
+    "gulp-browserify": "~0.5.0",
+    "gulp-uglify": "~0.2.1",
+    "gulp-rename": "~1.2.0",
+    "gulp-size": "~0.2.0",
+    "jsdom": "~0.10.5",
+    "gulp-gzip": "0.0.5"
+  }
+}
