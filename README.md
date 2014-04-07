@@ -1,5 +1,8 @@
 # nanoxhr
 
+[![browser support](https://ci.testling.com/asbjornenge/nanoxhr.png)
+](https://ci.testling.com/asbjornenge/nanoxhr)
+
 Nanoxhr is a small xhr (ajax) library.   
 
     1550 B nanoxhr.min.js     // minified
