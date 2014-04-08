@@ -5,8 +5,8 @@
 
 Nanoxhr is a small xhr (ajax) library.   
 
-    1550 B nanoxhr.min.js     // minified
-     662 B nanoxhr.min.js.gz  // minified+gzipped
+    1510 B nanoxhr.min.js     // minified
+     646 B nanoxhr.min.js.gz  // minified+gzipped
      
 ### Install
 

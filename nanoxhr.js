@@ -1,17 +1,3 @@
-function createRequest(url) {
-    var req;
-    // if (typeof 'XMLHttpRequest' === 'undefined' && typeof 'ActiveXObject' !== 'undefined') {
-    //     req = new ActiveXObject('Microsoft.XMLHTTP');
-    // }
-    // // CORS (IE8-9)
-    // if (url.indexOf('http') === 0 && typeof XDomainRequest !== 'undefined') {
-    //     req = new XDomainRequest();
-    // }
-    // // local, CORS (other browsers)
-    req = new XMLHttpRequest();
-    return req;
-}
-
 function serialize(data) {
     if (typeof data !== 'string') {
         var serialized = []
@@ -23,8 +9,8 @@ function serialize(data) {
     return data
 }
 
-var nxhr = function(req, url) {
-    this.req      = req
+var nxhr = function(url) {
+    this.req      = new XMLHttpRequest()
     this.url      = url
     this._data    = null
     this._method  = 'GET'
@@ -57,6 +43,5 @@ nxhr.prototype.call = function(callback) {
 }
 
 module.exports = function(url) {
-    return new nxhr(createRequest(url), url)
-};
-
+    return new nxhr(url)
+}
