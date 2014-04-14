@@ -10,19 +10,13 @@ Nanoxhr is a small xhr (ajax) library.
      
 ### Install
 
-Nanoxhr is available on both npm and bower.
+Nanoxhr is available on npm.
 
 	npm install nanoxhr
-	bower install nanoxhr
 	
 ### Use
 
-    // Node (browserify)
-    var nxhr = require('nanoxhr')
-		
-    // Browser AMD
-    require(['nanoxhr'], function(nxhr) {
-        nxhr('/api/cakes')
+    require('nanoxhr')('/api/cakes')
             .method('POST')
             .set('Content-Type','application-json')
             .set('Cookie','monster=2713cea58e115e44b91928d57b48e832;')
@@ -31,10 +25,6 @@ Nanoxhr is available on both npm and bower.
             .call(function(res) {
           	    console.log(res.status, res.responseText)
             })
-	})
-	
-	//Browser Script
-	<script src="nanoxhr.js"></script>
 	
 ### Docs
 
