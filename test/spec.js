@@ -1,5 +1,5 @@
 var assert             = require('assert')
-var fakeXMLHttpRequest = require('./fake_xml_http_request');
+var fakeXMLHttpRequest = require('fakexmlhttprequest');
 var nxhr               = require('../nanoxhr')
 XMLHttpRequest         = fakeXMLHttpRequest;
 
