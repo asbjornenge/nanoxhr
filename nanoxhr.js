@@ -38,7 +38,7 @@ nxhr.prototype.call = function(callback) {
     // req.onreadystatechange = function () { console.log(req.readyState); if (req.readyState === 4) callback(req) }
     this.req.open(this._method, this.url, false)
     for (var header in this._headers) { this.req.setRequestHeader(header, this._headers[header]); }
-    this.req.send(serialize(this._data))
+    try { this.req.send(serialize(this._data)) } catch(err) { callback(this.req) }
     return this
 }
 
