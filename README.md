@@ -22,6 +22,7 @@ Nanoxhr is available on npm.
             .set('Cookie','monster=2713cea58e115e44b91928d57b48e832;')
             .data(JSON.stringify({topping:'sprinkles'}))
             .query({amount:5})
+            .timeout(1000)
             .call(function(res) {
           	    console.log(res.status, res.responseText)
             })
