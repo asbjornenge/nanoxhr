@@ -3,17 +3,17 @@
 [![browser support](https://ci.testling.com/asbjornenge/nanoxhr.png)
 ](https://ci.testling.com/asbjornenge/nanoxhr)
 
-Nanoxhr is a small xhr (ajax) library.   
+Nanoxhr is a small xhr (ajax) library.
 
     1510 B nanoxhr.min.js     // minified
      646 B nanoxhr.min.js.gz  // minified+gzipped
-     
+
 ### Install
 
 Nanoxhr is available on npm.
 
 	npm install nanoxhr
-	
+
 ### Use
 
     require('nanoxhr')('/api/cakes')
@@ -25,9 +25,25 @@ Nanoxhr is available on npm.
             .call(function(res) {
           	    console.log(res.status, res.responseText)
             })
-	
+
 ### Docs
 
 For full documentation see the [spec](https://github.com/asbjornenge/nanoxhr/blob/master/test/spec.js).  
 
 enjoy.
+
+### Changelog
+
+#### 1.0.0
+
+* MAJOR: Now doing ***async*** by default!!
+* Added .sync as .call alias to perform a sync request
+* Added timeout support
+
+#### 0.2.0
+
+* Wrapping req.send in try-catch for send-error handling via callback
+
+#### 0.0.1
+
+* Initial release! :tada:

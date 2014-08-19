@@ -56,4 +56,21 @@ describe('TAGUHB AJAX', function() {
         assert.equal(r.req.url.indexOf('?'), 8)
     })
 
+    it('should support settings a timeout', function (done) {
+        // fakeXMLHttpRequest does not support ontimeout event, only run if real browser
+        if (environment == 'localtest') { assert(true); done(); return }
+        var r = nxhr('/some/url')
+            .timeout(100)
+            .call(function (res) {
+                console.log(res.status)
+                assert(res.status == 0)
+                done()
+            })
+
+        setTimeout(function () {
+            r.req.respond(200, { "Content-Type": "application/json" }, JSON.stringify([{ id: 1, text: "Provide examples", done: true }]))
+        },100)
+
+    })
+
 })
