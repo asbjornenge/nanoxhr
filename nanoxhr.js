@@ -40,7 +40,7 @@ nxhr.prototype.timeout = function(ms) {
 }
 
 nxhr.prototype.respond = function (callback) {
-    if (!this.callback_called) { callback(this.req); this.callback_called = true }
+    if (!this.callback_called) { callback(this.req); this.callback_called = true }
 }
 nxhr.prototype.sync  = function(callback) {
     this._async = false
