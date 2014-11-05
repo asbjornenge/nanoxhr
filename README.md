@@ -35,6 +35,10 @@ enjoy.
 
 ### Changelog
 
+#### 1.0.2
+
+* Removed wonky char cause web breakage
+
 #### 1.0.0
 
 * MAJOR: Now doing ***async*** by default!!
